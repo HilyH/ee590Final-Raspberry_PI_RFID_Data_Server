@@ -1,4 +1,5 @@
 var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('demotracker.db');
 // Create Tables
 db.serialize(function() {
   db.run("CREATE TABLE if not exists rfid_tags (\

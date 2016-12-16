@@ -2,6 +2,7 @@ let jnet = require('./json_net');
 let server = new jnet.JSONServer();
 
 let sqlite3 = require('sqlite3').verbose();
+let db = new sqlite3.Database('demotracker.db');
 
 server.on('json_connection', function (jsocket) {
 

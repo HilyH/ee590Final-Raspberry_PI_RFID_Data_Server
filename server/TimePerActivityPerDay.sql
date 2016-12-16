@@ -1,4 +1,5 @@
 /*
+ cat TimePerActivityPerDay.sql | sqlite3 .\tracker.db
 */
 .headers on
 .mode column

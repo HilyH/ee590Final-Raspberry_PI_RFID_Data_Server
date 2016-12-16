@@ -57,6 +57,7 @@ client.on('connect', function () {
   event_num = 0;
 
   // Add get all method to commnds to send
+  //event_log.push({ "command": "get_rfid", "device_id": deviceID});
   // Add command to end connection at end of list
   event_log.push({ "command": "end" });
 
