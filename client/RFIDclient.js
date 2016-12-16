@@ -102,7 +102,7 @@ client.on('connect', function () {
   event_num = 0;
 
   // Add get all method to commnds to send
-  event_log.push({ "command": "get_rfid", "device_id": "PI_01"});
+  //event_log.push({ "command": "get_rfid", "device_id": "PI_01"});
   // Add command to end connection at end of list
   event_log.push({ "command": "end" });
 
@@ -144,8 +144,9 @@ client.on('json', function (object) {
     else if (object.message === 'goodbye'){
       event_log = [];
     }
+    // TODO Decide what to do if server returns an error message
     // Write next command
-    if (object.message !== 'goodbye' && event_num < event_log.length) {
+      if (object.message !== 'goodbye' && event_num < event_log.length) {
       client.jwrite(event_log[event_num]);
     }
   }
